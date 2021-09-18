@@ -8,6 +8,20 @@ body {
   margin: 0 auto;
   padding: 4rem 2rem;
 }
+
 p { margin: 1rem 0; }
+
 li { margin: 0.4rem 0; }
+
 a {color: #1565c0; }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: rgba(255, 255, 255, 0.87); /* 87% white */
+    }
+
+    a {
+        color: #90caf9; /* blue200 */
+    }
+}
