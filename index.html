@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="style.css" />
@@ -24,8 +29,7 @@
 <header id="title-block-header">
 <h1 class="title">Dr. Markus Zoppelt</h1>
 </header>
-<p>Security architect working at <a
-href="https://www.siemens.com/">Siemens</a>.</p>
+<p>Software Engineer.</p>
 <p>I did my PhD in computer science at FAU at the Chair of Applied
 Cryptography (<a href="https://www.chaac.tf.fau.eu/">ChaAC</a>) on the
 topics automotive security and password hardened encryption services. <a
