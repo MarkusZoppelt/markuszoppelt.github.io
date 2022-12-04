@@ -23,4 +23,5 @@ at [markus@zoppelt.net](mailto:%6Da%72kus@zoppelt.%6Eet).
 
 * [Blog](/blog)
 * [GitHub](https://github.com/MarkusZoppelt)
+* <a rel="me" href="https://infosec.exchange/@MarkusZoppelt">Mastodon</a>
 * [Google Scholar](https://scholar.google.com/citations?user=4SgIiuAAAAAJ) (publications)
