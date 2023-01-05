@@ -15,9 +15,6 @@ Chair of Applied Cryptography ([ChaAC](https://www.chaac.tf.fau.eu/))
 on the topics automotive security and password hardened encryption services.
 [Thesis](https://opus4.kobv.de/opus4-fau/frontdoor/index/index/year/2021/docId/17344)
 
-If you have my phone number, I strongly prefer to be contacted via Signal.
-In other cases, please use my [PGP key](pubkey.asc) and send me an encrypted email
-at [markus@zoppelt.net](mailto:%6Da%72kus@zoppelt.%6Eet).
 
 ### Links
 
