@@ -12,7 +12,6 @@ Venatoriusstr. 10<br />
 90455 Nürnberg<br />
 
 **Kontakt:**<br />
-Telefon: +49 173 9322451<br />
 E-Mail: <a href="javascript:location='mailto:\u006d\u0061\u0072\u006b\u0075\u0073\u0040\u007a\u006f\u0070\u0070\u0065\u006c\u0074\u002e\u006e\u0065\u0074';void 0"><script type="text/javascript">document.write('\u006d\u0061\u0072\u006b\u0075\u0073\u0040\u007a\u006f\u0070\u0070\u0065\u006c\u0074\u002e\u006e\u0065\u0074')</script></a>
 
 **Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:**<br />
