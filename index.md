@@ -20,6 +20,10 @@ A CLI tool that helps you integrate and run fuzz tests in your project
 [portfolio&#95;rs](https://github.com/MarkusZoppelt/portfolio_rs)<br />
 A simple command line tool for managing investment portfolios, written in Rust
 
+[yubikey-otp](https://github.com/MarkusZoppelt/yubikey-otp)<br />
+Fuzzy search for TOTP (oath) secrets on your YubiKey and copy them to your
+clipboard
+
 [Hexagon Hamlet](https://github.com/MarkusZoppelt/Hexagon-Hamlet)
 ([App Store](https://apps.apple.com/app/hexagon-hamlet/id1523354572)) <br />
 A city-builder game for iOS built with Unity -
