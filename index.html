@@ -12,8 +12,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -31,7 +34,8 @@
 </header>
 <p>I’m a software engineer at <a
 href="https://www.code-intelligence.com/">Code Intelligence</a> working
-on CLI fuzz testing tools and advancements in fuzzing.</p>
+on CLI fuzz testing tools and advancements in fuzzing. <a
+href="https://github.com/MarkusZoppelt">GitHub</a></p>
 <p>My interests and skills are primarily in the field of security. I
 obtained my PhD in Computer Science from FAU at the Chair of Applied
 Cryptography (<a href="https://www.chaac.tf.fau.eu/">ChaAC</a>) on the
@@ -39,10 +43,8 @@ topics of automotive security and password hardened encryption services.
 <a
 href="https://opus4.kobv.de/opus4-fau/frontdoor/index/index/year/2021/docId/17344">Thesis</a></p>
 <h2 id="software">Software</h2>
-<p><a
-href="https://github.com/CodeIntelligenceTesting/cifuzz">cifuzz</a><br />
-A CLI tool that helps you integrate and run fuzz tests in your
-project</p>
+<p><a href="https://github.com/MarkusZoppelt/cifuzz">cifuzz</a><br /> A
+CLI tool that helps you integrate and run fuzz tests in your project</p>
 <p><a
 href="https://github.com/MarkusZoppelt/portfolio_rs">portfolio_rs</a><br />
 A simple command line tool for managing investment portfolios, written
@@ -52,27 +54,11 @@ href="https://github.com/MarkusZoppelt/yubikey-otp">yubikey-otp</a><br />
 Fuzzy search for TOTP (oath) secrets on your YubiKey and copy them to
 your clipboard</p>
 <p><a href="https://github.com/MarkusZoppelt/Hexagon-Hamlet">Hexagon
-Hamlet</a> (<a
-href="https://apps.apple.com/app/hexagon-hamlet/id1523354572">App
-Store</a>) <br /> A city-builder game for iOS built with Unity - a joint
+Hamlet</a><br /> A city-builder game for iOS built with Unity - a joint
 work with <a href="https://twinfox.itch.io/">Twinfox</a> and <a
 href="https://fabian-fuchs.itch.io/">Fabian Fuchs</a><br /></p>
-<p><a href="https://github.com/MarkusZoppelt/panda">panda</a><br />
-Extremely simple static blogging engine</p>
 <p><a href="https://github.com/MarkusZoppelt/SAM">SAM</a> (<a
 href="/SAM">HTML</a>)<br /> Security Abstraction Model for the
 EAST-ADL</p>
-<h2 id="links">Links</h2>
-<ul>
-<li><a href="/blog">Blog</a></li>
-<li><a href="https://github.com/MarkusZoppelt">GitHub</a></li>
-<li><a rel="me" href="https://infosec.exchange/@MarkusZoppelt">Mastodon</a></li>
-<li><a
-href="https://scholar.google.com/citations?user=4SgIiuAAAAAJ">Google
-Scholar</a> (publications)</li>
-</ul>
-<footer>
-    <a href="impressum.html">Impressum</a>
-</footer>
 </body>
 </html>
