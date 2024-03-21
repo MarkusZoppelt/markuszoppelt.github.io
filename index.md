@@ -15,7 +15,7 @@ and password hardened encryption services.
 
 ## Software
 
-[cifuzz](https://github.com/MarkusZoppelt/cifuzz)<br />
+[cifuzz](https://www.code-intelligence.com/product-ci-fuzz)<br />
 A CLI tool that helps you integrate and run fuzz tests in your project
 
 [portfolio&#95;rs](https://github.com/MarkusZoppelt/portfolio_rs)<br />
