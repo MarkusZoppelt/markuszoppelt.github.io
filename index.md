@@ -11,7 +11,7 @@ My interests and skills are primarily in the field of security. I obtained my
 PhD in Computer Science from FAU at the Chair of Applied Cryptography
 ([ChaAC](https://www.chaac.tf.fau.eu/)) on the topics of automotive security
 and password hardened encryption services.
-[Thesis](https://opus4.kobv.de/opus4-fau/frontdoor/index/index/year/2021/docId/17344)
+[Thesis](https://open.fau.de/items/1b605800-f2ce-44d1-8f7c-83fb7f1633db)
 
 ## Software
 
