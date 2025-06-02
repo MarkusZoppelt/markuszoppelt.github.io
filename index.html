@@ -1,63 +1,294 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="en" class="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="description" content="Markus Zoppelt’s personal website" />
-  <title>Dr. Markus Zoppelt</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Markus Zoppelt</title>
+    <meta name="description" content="Software Engineer, Security Researcher, Speaker">
+    <link rel="icon" href="static/favicon.ico">
+    <link rel="stylesheet" href="static/inter.css">
+    <script src="static/tailwind.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1e88e5',
+              secondary: '#212121',
+            },
+          },
+        },
+      }
+    </script>
+    <!-- Custom Styles for Dark Theme, Background Gradient, and Scroll Animations -->
+    <style>
+      /* Dark gradient page background */
+      body {
+        background: linear-gradient(135deg, #0a0f1f, #000000);
+      }
+      /* Section fade-in on scroll */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
 </head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Dr. Markus Zoppelt</h1>
-</header>
-<p>I’m a software engineer at <a
-href="https://www.code-intelligence.com/">Code Intelligence</a> working
-on CLI fuzz testing tools and advancements in fuzzing. <a
-href="https://github.com/MarkusZoppelt">GitHub</a></p>
-<p>My interests and skills are primarily in the field of security. I
-obtained my PhD in Computer Science from FAU at the Chair of Applied
-Cryptography (<a href="https://www.chaac.tf.fau.eu/">ChaAC</a>) on the
-topics of automotive security and password hardened encryption services.
-<a
-href="https://open.fau.de/items/1b605800-f2ce-44d1-8f7c-83fb7f1633db">Thesis</a></p>
-<h2 id="software">Software</h2>
-<p><a
-href="https://www.code-intelligence.com/product-ci-fuzz">cifuzz</a><br />
-A CLI tool that helps you integrate and run fuzz tests in your
-project</p>
-<p><a
-href="https://github.com/MarkusZoppelt/portfolio_rs">portfolio_rs</a><br />
-A simple command line tool for managing investment portfolios, written
-in Rust</p>
-<p><a
-href="https://github.com/MarkusZoppelt/yubikey-otp">yubikey-otp</a><br />
-Fuzzy search for TOTP (oath) secrets on your YubiKey and copy them to
-your clipboard</p>
-<p><a href="https://github.com/MarkusZoppelt/Hexagon-Hamlet">Hexagon
-Hamlet</a><br /> A city-builder game for iOS built with Unity - a joint
-work with <a href="https://twinfox.itch.io/">Twinfox</a> and <a
-href="https://fabian-fuchs.itch.io/">Fabian Fuchs</a><br /></p>
-<p><a href="https://github.com/MarkusZoppelt/SAM">SAM</a> (<a
-href="/SAM">HTML</a>)<br /> Security Abstraction Model for the
-EAST-ADL</p>
+<body style="font-family: 'Inter', sans-serif;" class="text-gray-200">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-gray-800 bg-opacity-60 backdrop-blur-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center h-16 px-4">
+      <a href="./" class="text-2xl font-semibold text-white">Dr. Markus Zoppelt</a>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#about" class="text-gray-400 hover:text-primary">About</a>
+        <a href="#projects" class="text-gray-400 hover:text-primary">Projects</a>
+        <a href="#contact" class="text-gray-400 hover:text-primary">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative h-screen flex items-center justify-start overflow-hidden px-6 md:px-12">
+    <img src="static/hero.jpg" alt="Dr. Markus Zoppelt speaking on stage" class="absolute inset-0 h-full w-full object-cover object-top filter brightness-50">
+    <!-- Particle background -->
+    <div id="tsparticles" class="absolute inset-0"></div>
+    <div class="relative z-10 max-w-lg text-left text-white px-6 md:px-10 lg:px-16">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Hi, I’m Markus</h1>
+      <p class="text-lg md:text-xl mb-6 drop-shadow-lg">Software Engineer • Security Professional • Speaker</p>
+      <div class="flex items-center space-x-4">
+        <a href="#contact" class="inline-block px-6 py-3 bg-primary hover:bg-secondary text-white rounded-full font-semibold transition-colors">
+          Get In Touch
+        </a>
+        <a href="https://github.com/MarkusZoppelt" class="text-white hover:text-primary transition-colors" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 .5C5.37.5 0 5.86 0 12.45c0 5.29 3.438 9.78 8.207 11.36.6.113.82-.26.82-.58 0-.287-.01-1.04-.016-2.04-3.338.74-4.042-1.63-4.042-1.63-.546-1.4-1.335-1.772-1.335-1.772-1.09-.765.082-.75.082-.75 1.205.084 1.84 1.27 1.84 1.27 1.07 1.85 2.8 1.315 3.486 1 .108-.775.42-1.315.764-1.617-2.665-.308-5.467-1.35-5.467-6.017 0-1.33.467-2.414 1.234-3.263-.125-.31-.535-1.562.116-3.255 0 0 1.005-.322 3.3 1.25a11.46 11.46 0 013-.405c1.02.005 2.045.138 3 .405 2.28-1.572 3.285-1.25 3.285-1.25.655 1.693.245 2.945.12 3.255.77.85 1.23 1.934 1.23 3.263 0 4.678-2.807 5.704-5.48 6.007.43.375.81 1.115.81 2.25 0 1.62-.015 2.93-.015 3.33 0 .32.21.697.825.58C20.565 22.23 24 17.735 24 12.445 24 5.86 18.627.5 12 .5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-32">
+    <!-- About Section -->
+    <section id="about" class="fade-in py-20 bg-gray-800">
+      <div class="max-w-6xl mx-auto text-center px-4">
+        <h2 class="text-4xl font-bold mb-6 text-white">About Me</h2>
+        <!-- Carousel for About Points -->
+        <div class="relative max-w-6xl mx-auto">
+          <div class="overflow-hidden">
+            <div id="about-carousel" class="flex gap-x-6 transition-transform duration-500 ease-out">
+              <div class="w-full md:w-1/2 flex-shrink-0 px-6 py-4 bg-gray-700 bg-opacity-50 rounded-lg">
+                <p class="text-lg text-gray-300">Fluent in Go, with a PhD in Computer Science (<a href="https://open.fau.de/handle/openfau/17344" class="text-primary hover:underline">thesis</a>)</p>
+              </div>
+              <div class="w-full md:w-1/2 flex-shrink-0 px-6 py-4 bg-gray-700 bg-opacity-50 rounded-lg">
+                <p class="text-lg text-gray-300">Building AI-driven fuzz testing tools and cryptographic modules</p>
+              </div>
+              <div class="w-full md:w-1/2 flex-shrink-0 px-6 py-4 bg-gray-700 bg-opacity-50 rounded-lg">
+                <p class="text-lg text-gray-300">Automating security workflows for resilient, scalable systems</p>
+              </div>
+              <div class="w-full md:w-1/2 flex-shrink-0 px-6 py-4 bg-gray-700 bg-opacity-50 rounded-lg">
+                <p class="text-lg text-gray-300">Transforming complex vulnerabilities into developer-friendly solutions</p>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel Controls -->
+          <button id="about-prev" class="absolute top-1/2 left-2 md:-left-6 transform -translate-y-1/2 z-10 bg-gray-600 bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full">
+            <!-- Left Arrow -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button id="about-next" class="absolute top-1/2 right-2 md:-right-6 transform -translate-y-1/2 z-10 bg-gray-600 bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full">
+            <!-- Right Arrow -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-8 text-white">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <h3 class="text-2xl font-semibold mb-2"><a href="https://www.code-intelligence.com/product-ci-fuzz" class="text-primary hover:underline">cifuzz</a></h3>
+            <p class="text-gray-400">A CLI tool to seamlessly integrate fuzz testing into your development workflow.</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <h3 class="text-2xl font-semibold mb-2"><a href="https://stickr.shop" class="text-primary hover:underline">stickr.shop</a></h3>
+            <p class="text-gray-400">The renegade, CLI-only sticker shop! Visit via: <code>ssh stickr.shop</code></p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <h3 class="text-2xl font-semibold mb-2"><a href="https://github.com/MarkusZoppelt/portfolio_rs" class="text-primary hover:underline">portfolio_rs</a></h3>
+            <p class="text-gray-400">Rust-based CLI for managing and analyzing investment portfolios.</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <h3 class="text-2xl font-semibold mb-2"><a href="https://github.com/MarkusZoppelt/yubikey-otp" class="text-primary hover:underline">yubikey-otp</a></h3>
+            <p class="text-gray-400">Fuzzy search tool for TOTP (OATH) secrets on your YubiKey, with quick clipboard copy.</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <h3 class="text-2xl font-semibold mb-2"><a href="https://github.com/MarkusZoppelt/Hexagon-Hamlet" class="text-primary hover:underline">Hexagon Hamlet</a></h3>
+            <p class="text-gray-400">A collaborative city-builder game for iOS developed with Unity.</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <h3 class="text-2xl font-semibold mb-2"><a href="https://github.com/MarkusZoppelt/SAM" class="text-primary hover:underline">SAM</a></h3>
+            <p class="text-gray-400">Security Abstraction Model for the EAST-ADL architecture, simplifying security analysis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in py-20 bg-gray-800">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Fuzzing Highlights -->
+          <div class="text-gray-300">
+            <h3 class="text-2xl font-semibold text-white mb-4">Fuzzing Highlights</h3>
+            <ul class="list-disc list-inside space-y-2">
+              <li>Developed <a href="#projects" class="text-primary hover:underline">cifuzz</a> (<a href="https://github.com/MarkusZoppelt/cifuzz" class="text-primary hover:underline">repo</a>), an AI-powered CLI for automated fuzz testing.</li>
+              <li>Leveraged LLMs with Tree-of-Thoughts for high-quality test generation.</li>
+              <li>Built remote fuzzing service APIs and integrations.</li>
+              <li>Enabled libFuzzer support for C/C++, <a href="https://github.com/CodeIntelligenceTesting/jazzer" class="text-primary hover:underline">Jazzer</a> for JVM, and <a href="https://github.com/CodeIntelligenceTesting/jazzer.js" class="text-primary hover:underline">Jazzer.js</a> for JavaScript.</li>
+              <li>Integrated fuzzing into common build systems (Bazel, CMake, Maven, Gradle, Node.js).</li>
+            </ul>
+          </div>
+          <!-- Skill Cloud -->
+          <div class="text-gray-300">
+            <h3 class="text-2xl font-semibold text-white mb-4">Skills & Tools</h3>
+            <div class="flex flex-wrap gap-4">
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">Go</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">Rust</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">C/C++</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">Fuzzing</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">Cryptography</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">Nix/NixOS</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">Python</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">JavaScript</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">Docker</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">AWS</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">Linux</span>
+              <span class="bg-gray-700 bg-opacity-50 text-gray-300 px-4 py-2 rounded-full text-sm hover:bg-opacity-75 transition-colors">CI/CD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in py-20">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="text-4xl font-bold mb-4 text-white">Contact</h2>
+        <p class="text-lg text-gray-400 mb-6">Feel free to reach out via email or connect on social platforms.</p>
+        <a href="mailto:markus@zoppelt.net" class="px-8 py-4 bg-primary hover:bg-secondary text-white rounded-full font-semibold transition-colors">Email Me</a>
+        <div class="mt-8 flex justify-center space-x-6">
+          <!-- GitHub Icon -->
+          <a href="https://github.com/MarkusZoppelt" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 .5C5.37.5 0 5.86 0 12.45c0 5.29 3.438 9.78 8.207 11.36.6.113.82-.26.82-.58 0-.287-.01-1.04-.016-2.04-3.338.74-4.042-1.63-4.042-1.63-.546-1.4-1.335-1.772-1.335-1.772-1.09-.765.082-.75.082-.75 1.205.084 1.84 1.27 1.84 1.27 1.07 1.85 2.8 1.315 3.486 1 .108-.775.42-1.315.764-1.617-2.665-.308-5.467-1.35-5.467-6.017 0-1.33.467-2.414 1.234-3.263-.125-.31-.535-1.562.116-3.255 0 0 1.005-.322 3.3 1.25a11.46 11.46 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.572 3.285-1.25 3.285-1.25.655 1.693.245 2.945.12 3.255.77.85 1.23 1.934 1.23 3.263 0 4.678-2.807 5.704-5.48 6.007.43.375.81 1.115.81 2.25 0 1.62-.015 2.93-.015 3.33 0 .32.21.697.825.58C20.565 22.23 24 17.735 24 12.445 24 5.86 18.627.5 12 .5z"/>
+            </svg>
+          </a>
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/in/markus-zoppelt/" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 448 512">
+              <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341.2a53.79 53.79 0 1 1 53.79-53.79 53.79 53.79 0 0 1-53.79 53.79zM447.9 448h-92.7V302.4c0-34.7-12.4-58.4-43.3-58.4-23.5 0-37.6 15.8-43.8 31.2-2.2 5.5-2.8 13.1-2.8 20.8V448h-92.7s1.2-247.4 0-273h92.7v37.4c12.3-19 34.3-46.1 83.5-46.1 60.8 0 106.8 39.8 106.8 125.4z"/>
+            </svg>
+          </a>
+          <!-- X (Twitter) Icon -->
+          <a href="https://x.com/MarkusZoppelt" class="text-gray-400 hover:text-white transition-colors" aria-label="X">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 1200 1226.37">
+              <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 bg-gray-800 text-center">
+    <p class="text-gray-400">© 2025 Dr. Markus Zoppelt. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll Fade-in Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faders = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      faders.forEach(fader => observer.observe(fader));
+    });
+  </script>
+  <!-- tsParticles Library -->
+  <script src="static/tsparticles.bundle.min.js"></script>
+  <!-- Particle Background Init -->
+  <script>
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      interactivity: {
+        events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
+        modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 } }
+      },
+      particles: {
+        color: { value: "#00e5ff" },
+        links: { color: "#00e5ff", distance: 150, enable: true, opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 2, outModes: { default: "bounce" } },
+        number: { density: { enable: true, area: 800 }, value: 60 },
+        opacity: { value: 0.5 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } }
+      },
+      detectRetina: true
+    });
+  </script>
+  <!-- About Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('about-carousel');
+      const slides = Array.from(track.children);
+      // Show 2 slides on medium+ screens, 1 slide on smaller
+      let visibleCount = window.innerWidth >= 768 ? 2 : 1;
+      let maxIndex = slides.length - visibleCount;
+      let index = 0;
+      function updateCarousel() {
+        const offset = -(100 / visibleCount) * index;
+        track.style.transform = `translateX(${offset}%)`;
+      }
+      // Recompute counts on resize
+      window.addEventListener('resize', () => {
+        const prev = visibleCount;
+        visibleCount = window.innerWidth >= 768 ? 2 : 1;
+        maxIndex = slides.length - visibleCount;
+        if (index > maxIndex) index = maxIndex;
+        if (prev !== visibleCount) updateCarousel();
+      });
+      document.getElementById('about-next').addEventListener('click', () => {
+        index = (index + 1) % (maxIndex + 1);
+        updateCarousel();
+      });
+      document.getElementById('about-prev').addEventListener('click', () => {
+        index = (index - 1 + (maxIndex + 1)) % (maxIndex + 1);
+        updateCarousel();
+      });
+      // Auto-rotate every 5 seconds
+      setInterval(() => {
+        index = (index + 1) % (maxIndex + 1);
+        updateCarousel();
+      }, 5000);
+      updateCarousel();
+    });
+  </script>
 </body>
 </html>
