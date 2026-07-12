@@ -9,14 +9,14 @@ This is a minimal, professional portfolio website for Markus Zoppelt hosted on G
 ## Architecture
 
 ### Site Structure
-- **Static HTML Site**: Single HTML file with embedded CSS
+- **Static HTML Site**: English root + German `/de/` page, shared embedded CSS
 - **No Build Process**: Direct deployment to GitHub Pages
 - **Minimal Dependencies**: Self-hosted Inter fonts only
-- **Single Page Design**: Everything contained in one clean page
+- **Localization**: Separate pages (`index.html`, `de/index.html`); EN root redirects to `/de/` when browser language is `de*` (`navigator.languages`)
 
 ### Key Components
-- **Hero Section**: Profile image, name, position at Helsing.ai, and professional description
-- **Contact Links**: Three circular icon buttons (Email, GitHub, LinkedIn)
+- **Hero Section**: Portrait, name, role at Helsing, bio
+- **Contact Links**: Email, Forge, GitHub, LinkedIn, Scholar
 - **Responsive Design**: Mobile-first approach with desktop enhancements
 
 ## Development Commands
@@ -29,12 +29,15 @@ No build process or commands needed:
 ## File Organization
 
 **Essential Files:**
-- `index.html` - Complete website (single-page design)
+- `index.html` - English page + language auto-redirect
+- `de/index.html` - German page (same layout, `../static/` assets)
 - `CNAME` - Domain configuration for GitHub Pages
 - `CLAUDE.md` - This documentation file
 
 **Static Assets:**
-- `static/favicon.ico` - Site favicon
+- `static/site.css` - Shared layout styles (linked from EN + DE pages)
+- `static/favicon.svg` - Favicon (Tokyo Night diamond mark)
+- `static/apple-touch-icon.png` - iOS home-screen icon
 - `static/inter.css` - Inter font definitions (Regular 400, Medium 500, Bold 700)
 - `static/hero.jpg` - Profile image
 - `static/fonts/` - Self-hosted Inter font files (3 weights)
